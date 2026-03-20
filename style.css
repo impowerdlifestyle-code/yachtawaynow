@@ -1,10 +1,11 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   background: #071520; color: #f0f7fa;
   line-height: 1.6; overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  font-weight: 300;
 }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
@@ -48,15 +49,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .section { padding: 100px 0; }
 .section-label {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--gold);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--seafoam);
   margin-bottom: 16px;
 }
-.section-label::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.section-label::before { content: ''; width: 32px; height: 1px; background: var(--seafoam); }
 .section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 700;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 600;
   line-height: 1.15; color: var(--white); margin-bottom: 20px;
+  letter-spacing: -0.01em;
 }
 .section-title em {
   font-style: italic; color: var(--gold);
@@ -66,7 +69,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   animation: goldShimmer 4s linear infinite;
 }
 .section-subtitle {
-  font-size: 1.05rem; color: var(--gray-400); max-width: 600px; line-height: 1.7;
+  font-size: 1.05rem; color: var(--gray-400); max-width: 600px; line-height: 1.8;
+  font-weight: 300; letter-spacing: 0.01em;
 }
 
 /* ─── GOLD DIVIDER ────────────────────────────────────────────── */
@@ -78,9 +82,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ─── SCROLL PROGRESS BAR ─────────────────────────────────────── */
 .scroll-progress {
   position: fixed; top: 0; left: 0; height: 3px; width: 0;
-  background: linear-gradient(90deg, var(--ocean), var(--seafoam), var(--ocean-light));
+  background: linear-gradient(90deg, var(--seafoam-dark), var(--seafoam), var(--ocean-light));
   z-index: 10000; transition: width 0.1s linear;
-  box-shadow: 0 0 8px rgba(26,139,179,0.5);
+  box-shadow: 0 0 10px rgba(78,205,196,0.5);
 }
 
 /* ─── GOLD PARTICLE CANVAS ────────────────────────────────────── */
@@ -93,8 +97,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .btn {
   display: inline-flex; align-items: center; gap: 10px;
   padding: 14px 32px; border-radius: 50px; font-weight: 600;
-  font-size: 0.9rem; letter-spacing: 0.02em;
+  font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase;
   transition: var(--transition); position: relative;
+  font-family: 'Montserrat', sans-serif;
 }
 .btn-gold {
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
@@ -205,7 +210,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .navbar .container { display: flex; align-items: center; justify-content: space-between; }
 .logo {
   display: flex; align-items: center; gap: 12px;
-  font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem;
+  font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.3rem;
+  letter-spacing: 0.03em;
 }
 .logo-icon {
   border-radius: 0; background: none; width: auto; height: 40px;
@@ -214,8 +220,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .logo span { color: var(--gold); }
 .nav-links { display: flex; align-items: center; gap: 8px; }
 .nav-links a {
-  padding: 8px 16px; font-size: 0.875rem; font-weight: 500;
+  padding: 8px 16px; font-size: 0.8rem; font-weight: 500;
   color: var(--gray-400); border-radius: 8px; transition: var(--transition);
+  letter-spacing: 0.04em;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--white); background: rgba(255,255,255,0.06); }
 .nav-cta {
@@ -290,12 +297,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 8px 20px; border-radius: 50px;
-  background: rgba(26,139,179,0.12); border: 1px solid rgba(26,139,179,0.25);
-  font-size: 0.8rem; font-weight: 600; color: var(--ocean-light);
-  margin-bottom: 32px; letter-spacing: 0.1em;
+  background: rgba(78,205,196,0.1); border: 1px solid rgba(78,205,196,0.3);
+  font-size: 0.8rem; font-weight: 600; color: var(--seafoam);
+  margin-bottom: 32px; letter-spacing: 0.15em;
+  font-family: 'Montserrat', sans-serif;
 }
 .hero h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 700; line-height: 1.08; margin-bottom: 28px;
 }
@@ -319,7 +327,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .hero-stat { text-align: center; }
 .hero-stat-value {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 2.2rem; font-weight: 700; color: var(--white);
 }
 .hero-stat-value span { color: var(--gold); }
@@ -354,7 +362,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: var(--shadow-lg); text-align: center;
 }
 .vessel-float-value {
-  font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold);
+  font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--gold);
 }
 .vessel-float-label { font-size: 0.8rem; color: var(--gray-400); }
 .vessel-specs {
@@ -369,7 +377,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-color: var(--gold); transform: translateY(-2px);
   box-shadow: 0 0 20px rgba(201,168,76,0.08);
 }
-.vessel-spec-value { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--white); }
+.vessel-spec-value { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--white); }
 .vessel-spec-value span { color: var(--gold); font-size: 0.8rem; }
 .vessel-spec-label { font-size: 0.7rem; color: var(--gray-600); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
 
@@ -399,19 +407,23 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .exp-card-number {
   position: absolute; top: 16px; left: 16px; z-index: 1;
   font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
-  color: var(--gold); padding: 6px 12px; border-radius: 50px;
+  color: var(--seafoam); padding: 6px 12px; border-radius: 50px;
   background: rgba(6,11,20,0.7); backdrop-filter: blur(8px);
-  border: 1px solid rgba(201,168,76,0.2);
+  border: 1px solid rgba(78,205,196,0.25);
+  font-family: 'Montserrat', sans-serif;
 }
 .exp-card-body { padding: 28px; }
 .exp-card h3 {
-  font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 10px;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 10px;
 }
 .exp-card p { font-size: 0.9rem; color: var(--gray-400); line-height: 1.7; margin-bottom: 20px; }
 .exp-link {
-  font-size: 0.85rem; font-weight: 600; color: var(--gold);
+  font-size: 0.8rem; font-weight: 600; color: var(--seafoam);
   display: inline-flex; align-items: center; gap: 6px; transition: var(--transition);
+  letter-spacing: 0.06em; text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
 }
+.exp-link:hover { color: var(--gold); }
 .exp-link:hover { gap: 10px; }
 
 /* ─── PRICING ─────────────────────────────────────────────────── */
@@ -434,8 +446,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: 0 0 40px rgba(201,168,76,0.1), 0 20px 50px rgba(0,0,0,0.4);
 }
 .price-card.featured {
-  border-color: var(--ocean);
-  background: linear-gradient(180deg, rgba(26,139,179,0.08), rgba(10,31,48,0.8));
+  border-color: var(--seafoam);
+  background: linear-gradient(180deg, rgba(78,205,196,0.06), rgba(10,31,48,0.8));
 }
 .price-card.featured::before {
   content: 'BEST VALUE'; position: absolute; top: 16px; right: -32px;
@@ -443,11 +455,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--navy); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em;
   padding: 6px 40px; transform: rotate(45deg);
 }
-.price-card-title { font-size: 0.8rem; font-weight: 700; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 16px; }
+.price-card-title { font-size: 0.75rem; font-weight: 700; color: var(--seafoam); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 16px; font-family: 'Montserrat', sans-serif; }
 .price-card-amount {
-  font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; color: var(--white); margin-bottom: 4px;
+  font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: var(--white); margin-bottom: 4px;
 }
-.price-card-amount span { font-size: 1rem; color: var(--gray-600); font-family: 'Inter', sans-serif; font-weight: 400; }
+.price-card-amount span { font-size: 1rem; color: var(--gray-600); font-family: 'Montserrat', sans-serif; font-weight: 400; }
 .price-card-detail { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 28px; line-height: 1.5; }
 .price-features { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
 .price-feature {
@@ -474,8 +486,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: 0 0 40px rgba(201,168,76,0.1), 0 20px 50px rgba(0,0,0,0.4);
 }
 .pricing-card.featured {
-  border-color: var(--ocean);
-  background: linear-gradient(180deg, rgba(26,139,179,0.08), rgba(10,31,48,0.8));
+  border-color: var(--seafoam);
+  background: linear-gradient(180deg, rgba(78,205,196,0.06), rgba(10,31,48,0.8));
 }
 .pricing-card.featured::before {
   content: 'BEST VALUE'; position: absolute; top: 16px; right: -32px;
@@ -505,20 +517,21 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .pricing-badge {
   display: inline-block; padding: 4px 14px; border-radius: 50px;
-  background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25);
-  font-size: 0.7rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em;
+  background: rgba(78,205,196,0.1); border: 1px solid rgba(78,205,196,0.25);
+  font-size: 0.7rem; font-weight: 700; color: var(--seafoam); letter-spacing: 0.1em;
   text-transform: uppercase; margin-bottom: 16px;
+  font-family: 'Montserrat', sans-serif;
 }
 .pricing-header { margin-bottom: 28px; }
 .pricing-header h3 {
-  font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700;
   color: var(--white); margin-bottom: 12px;
 }
 .pricing-amount {
-  font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700;
+  font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700;
   color: var(--white); margin-bottom: 4px;
 }
-.pricing-amount span { font-size: 1rem; color: var(--gray-600); font-family: 'Inter', sans-serif; font-weight: 400; }
+.pricing-amount span { font-size: 1rem; color: var(--gray-600); font-family: 'Montserrat', sans-serif; font-weight: 400; }
 .pricing-note { font-size: 0.85rem; color: var(--gray-600); line-height: 1.5; }
 .pricing-features {
   display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; flex: 1;
@@ -536,7 +549,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   width: 100%; aspect-ratio: 1; object-fit: cover;
 }
 .team-card h3 {
-  font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700;
   margin: 20px 24px 4px; text-align: center;
 }
 .team-bio {
@@ -693,8 +706,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: linear-gradient(to top, var(--dark-card) 0%, transparent 40%);
 }
 .team-info { padding: 24px; text-align: center; }
-.team-info h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
-.team-role { font-size: 0.8rem; color: var(--gold); font-weight: 600; letter-spacing: 0.05em; margin-bottom: 12px; }
+.team-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
+.team-role { font-size: 0.75rem; color: var(--seafoam); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; font-family: 'Montserrat', sans-serif; }
 .team-info p { font-size: 0.85rem; color: var(--gray-400); line-height: 1.6; margin-bottom: 16px; }
 .team-socials { display: flex; justify-content: center; gap: 10px; }
 .team-social {
@@ -707,19 +720,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ─── CTA BANNER ──────────────────────────────────────────────── */
 .cta-banner {
-  background: linear-gradient(135deg, var(--ocean-dark), var(--navy-light), var(--navy));
+  background: linear-gradient(135deg, rgba(11,29,46,1), rgba(15,109,142,0.4), rgba(11,29,46,1));
   background-size: 200% 200%; animation: gradientShift 10s ease infinite;
   padding: 100px 0; text-align: center; position: relative; overflow: hidden;
 }
 .cta-banner::before {
   content: ''; position: absolute; inset: 0;
   background:
-    radial-gradient(circle at 20% 50%, rgba(212,168,83,0.06) 0%, transparent 50%),
-    radial-gradient(circle at 80% 50%, rgba(26,139,179,0.08) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(78,205,196,0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(201,168,76,0.05) 0%, transparent 50%);
 }
 .cta-banner .container { position: relative; z-index: 1; }
 .cta-banner h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 20px;
 }
 .cta-banner h2 em { font-style: italic; color: var(--gold); }
@@ -733,58 +746,88 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 /* Premium yacht background overlay on booking section */
 .booking::before {
-  content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%;
+  content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%;
   background: url('/images/charter-img_0877.jpg') center/cover;
-  opacity: 0.1;
-  -webkit-mask-image: linear-gradient(to left, black, transparent);
-  mask-image: linear-gradient(to left, black, transparent);
+  opacity: 0.08;
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.6), transparent);
+  mask-image: linear-gradient(to left, rgba(0,0,0,0.6), transparent);
+}
+.booking::after {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 20%, rgba(78,205,196,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 80%, rgba(201,168,76,0.03) 0%, transparent 50%);
+  pointer-events: none;
 }
 .booking .container {
   display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
   position: relative; z-index: 1;
 }
 .booking-card {
-  background: rgba(12,21,36,0.85);
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--dark-border);
-  border-radius: var(--radius-lg); padding: 40px;
+  background: linear-gradient(145deg, rgba(12,21,36,0.9), rgba(10,31,48,0.85));
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(78,205,196,0.12);
+  border-radius: var(--radius-lg); padding: 48px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 40px rgba(78,205,196,0.03);
+  position: relative;
 }
-.booking-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 24px; }
-.form-group { margin-bottom: 20px; }
-.form-label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--gray-400); margin-bottom: 8px; }
+.booking-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--seafoam), var(--gold), var(--seafoam), transparent);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.booking-card h3 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+.booking-card-subtitle {
+  font-size: 0.85rem; color: var(--gray-600); margin-bottom: 32px; font-weight: 300;
+  letter-spacing: 0.02em;
+}
+.form-group { margin-bottom: 24px; }
+.form-label {
+  display: block; font-size: 0.75rem; font-weight: 600; color: var(--gray-400);
+  margin-bottom: 8px; letter-spacing: 0.08em; text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
 .form-input, .form-textarea, .form-select {
-  width: 100%; padding: 14px 18px; border-radius: 10px;
-  background: var(--navy); border: 1px solid var(--dark-border);
-  color: var(--white); font-family: inherit; font-size: 0.9rem;
-  transition: var(--transition); outline: none;
+  width: 100%; padding: 16px 20px; border-radius: 10px;
+  background: rgba(11,29,46,0.8); border: 1px solid var(--dark-border);
+  color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 0.9rem;
+  transition: var(--transition); outline: none; font-weight: 300;
 }
 .form-input:focus, .form-textarea:focus, .form-select:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(201,168,76,0.1), 0 0 20px rgba(201,168,76,0.05);
+  border-color: var(--seafoam);
+  box-shadow: 0 0 0 3px rgba(78,205,196,0.08), 0 0 24px rgba(78,205,196,0.06);
 }
-.form-input::placeholder, .form-textarea::placeholder { color: var(--gray-700); }
-.form-textarea { resize: vertical; min-height: 100px; }
+.form-input::placeholder, .form-textarea::placeholder { color: var(--gray-700); font-weight: 300; }
+.form-textarea { resize: vertical; min-height: 120px; }
 .form-select { appearance: none; cursor: pointer; }
 .form-select option { background: var(--navy); }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .booking-info-card {
-  background: var(--dark-card); border: 1px solid var(--dark-border);
-  border-radius: var(--radius); padding: 24px;
-  display: flex; gap: 16px; align-items: flex-start;
+  background: linear-gradient(135deg, rgba(10,31,48,0.6), rgba(12,21,36,0.4));
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius); padding: 24px 28px;
+  display: flex; gap: 20px; align-items: flex-start;
   margin-bottom: 16px; transition: var(--transition);
 }
 .booking-info-card:hover {
-  border-color: var(--gray-700);
-  box-shadow: 0 0 20px rgba(201,168,76,0.05);
+  border-color: rgba(78,205,196,0.25);
+  box-shadow: 0 0 24px rgba(78,205,196,0.06);
+  transform: translateX(4px);
 }
 .booking-info-icon {
-  flex-shrink: 0; width: 48px; height: 48px; border-radius: 12px;
-  background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.15);
+  flex-shrink: 0; width: 52px; height: 52px; border-radius: 14px;
+  background: linear-gradient(135deg, rgba(78,205,196,0.1), rgba(201,168,76,0.08));
+  border: 1px solid rgba(78,205,196,0.15);
   display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
 }
-.booking-info-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
-.booking-info-card p { font-size: 0.85rem; color: var(--gray-400); line-height: 1.5; }
-.booking-info-card a { color: var(--gold); font-weight: 600; }
+.booking-info-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; font-family: 'Montserrat', sans-serif; }
+.booking-info-card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+.booking-info-card p { font-size: 0.85rem; color: var(--gray-400); line-height: 1.6; font-weight: 300; }
+.booking-info-card a { color: var(--seafoam); font-weight: 500; transition: var(--transition); }
+.booking-info-card a:hover { color: var(--gold); }
 
 /* ─── ABOUT ───────────────────────────────────────────────────── */
 .about { background: var(--gray-900); }
@@ -817,7 +860,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .page-hero::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(26,111,196,0.06) 0%, transparent 60%);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(78,205,196,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(26,139,179,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 60%, rgba(201,168,76,0.03) 0%, transparent 50%);
 }
 .page-hero .container { position: relative; z-index: 1; }
 .breadcrumb {
@@ -838,7 +884,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .faq-question {
   width: 100%; padding: 24px 28px; display: flex; justify-content: space-between;
   align-items: center; cursor: pointer; background: none; border: none;
-  color: var(--white); font-family: 'Playfair Display', serif;
+  color: var(--white); font-family: 'Cormorant Garamond', serif;
   font-size: 1.05rem; font-weight: 600; text-align: left; transition: var(--transition);
 }
 .faq-question:hover { color: var(--gold); }
@@ -869,8 +915,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: 0 4px 15px rgba(201,168,76,0.3);
 }
 .footer h4 {
-  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em;
-  text-transform: uppercase; color: var(--white); margin-bottom: 20px;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--seafoam); margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
 }
 .footer ul li { margin-bottom: 12px; }
 .footer ul a { font-size: 0.9rem; color: var(--gray-400); transition: var(--transition); }
