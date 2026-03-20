@@ -884,6 +884,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     radial-gradient(ellipse at 80% 60%, rgba(201,168,76,0.03) 0%, transparent 50%);
 }
 .page-hero .container { position: relative; z-index: 1; }
+.page-hero .section-subtitle { margin: 0 auto; }
 .breadcrumb {
   font-size: 0.85rem; color: var(--gray-600);
   display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 20px;
