@@ -765,7 +765,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   pointer-events: none;
 }
 .booking .container {
-  display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; align-items: start;
   position: relative; z-index: 1;
 }
 .booking-card {
@@ -833,6 +832,20 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .booking-info-card p { font-size: 0.85rem; color: var(--gray-400); line-height: 1.6; font-weight: 300; }
 .booking-info-card a { color: var(--seafoam); font-weight: 500; transition: var(--transition); }
 .booking-info-card a:hover { color: var(--gold); }
+
+/* Full-width centered booking card (contact page) */
+.booking-card-full {
+  max-width: 800px; margin: 0 auto;
+}
+.booking-card-full h3 { text-align: center; }
+.booking-card-full .booking-card-subtitle { text-align: center; }
+
+/* Horizontal info row below form */
+.booking-info-row {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  margin-top: 48px;
+}
+.booking-info-row .booking-info-card { margin-bottom: 0; }
 
 /* ─── ABOUT ───────────────────────────────────────────────────── */
 .about { background: var(--gray-900); }
@@ -1040,6 +1053,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .form-label { font-size: 0.8rem; }
   .booking-info-card { padding: 16px; }
   .booking-info-icon { width: 42px; height: 42px; border-radius: 10px; font-size: 1.1rem; }
+  .booking-info-row { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 32px; }
+  .booking-card-full { max-width: 100%; }
   .about-image { font-size: 3rem; aspect-ratio: 16/9; }
   .page-hero { padding: 112px 0 48px; }
   .page-hero .section-title { font-size: clamp(1.4rem, 5vw, 2rem); }

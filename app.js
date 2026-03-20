@@ -227,63 +227,70 @@ function initParticles() {
   }, { passive: true });
 
   // ── Wave layers ──
-  // Each wave has: amplitude, frequency, speed, yOffset (0-1), color
+  // Slow, gentle swells like real ocean water
   var waves = [
-    { amp: 40, freq: 0.003, speed: 0.008, yOff: 0.25, r: 78, g: 205, b: 196, alpha: 0.025 },
-    { amp: 30, freq: 0.004, speed: 0.012, yOff: 0.30, r: 26, g: 139, b: 179, alpha: 0.02 },
-    { amp: 50, freq: 0.002, speed: 0.006, yOff: 0.50, r: 78, g: 205, b: 196, alpha: 0.018 },
-    { amp: 25, freq: 0.005, speed: 0.015, yOff: 0.55, r: 43, g: 186, b: 213, alpha: 0.015 },
-    { amp: 60, freq: 0.0015,speed: 0.004, yOff: 0.75, r: 26, g: 139, b: 179, alpha: 0.022 },
-    { amp: 35, freq: 0.0035,speed: 0.01,  yOff: 0.80, r: 78, g: 205, b: 196, alpha: 0.018 },
-    { amp: 20, freq: 0.006, speed: 0.018, yOff: 0.92, r: 201, g: 168, b: 76,  alpha: 0.012 },
+    { amp: 25, freq: 0.0012, speed: 0.0012, yOff: 0.22, r: 78, g: 205, b: 196, alpha: 0.02 },
+    { amp: 18, freq: 0.0018, speed: 0.0018, yOff: 0.30, r: 26, g: 139, b: 179, alpha: 0.018 },
+    { amp: 35, freq: 0.0008, speed: 0.0008, yOff: 0.48, r: 78, g: 205, b: 196, alpha: 0.016 },
+    { amp: 15, freq: 0.0022, speed: 0.0022, yOff: 0.55, r: 43, g: 186, b: 213, alpha: 0.014 },
+    { amp: 40, freq: 0.0006, speed: 0.0006, yOff: 0.72, r: 26, g: 139, b: 179, alpha: 0.02 },
+    { amp: 22, freq: 0.0015, speed: 0.0014, yOff: 0.80, r: 78, g: 205, b: 196, alpha: 0.016 },
+    { amp: 12, freq: 0.0025, speed: 0.002,  yOff: 0.92, r: 201, g: 168, b: 76,  alpha: 0.01 },
   ];
 
   // ── Caustic light ripples ──
   var caustics = [];
-  for (var i = 0; i < 12; i++) {
+  for (var i = 0; i < 10; i++) {
     caustics.push({
       x: Math.random() * 2 - 0.5,
       y: Math.random(),
-      size: Math.random() * 200 + 80,
-      speed: Math.random() * 0.0004 + 0.0002,
-      drift: Math.random() * 0.0002 - 0.0001,
+      size: Math.random() * 250 + 120,
+      speed: Math.random() * 0.00015 + 0.00005,
+      drift: Math.random() * 0.00008 - 0.00004,
       phase: Math.random() * Math.PI * 2,
-      alpha: Math.random() * 0.03 + 0.01
+      alpha: Math.random() * 0.025 + 0.008
     });
   }
 
   // ── Floating particles (sea spray / light motes) ──
   var motes = [];
-  for (var j = 0; j < 20; j++) {
+  for (var j = 0; j < 15; j++) {
     motes.push({
       x: Math.random(),
       y: Math.random(),
-      size: Math.random() * 2 + 0.5,
-      speedX: (Math.random() - 0.5) * 0.0003,
-      speedY: Math.random() * -0.0004 - 0.0001,
+      size: Math.random() * 1.8 + 0.4,
+      speedX: (Math.random() - 0.5) * 0.00012,
+      speedY: Math.random() * -0.00015 - 0.00005,
       phase: Math.random() * Math.PI * 2,
-      alpha: Math.random() * 0.4 + 0.1,
-      isGold: j < 5
+      alpha: Math.random() * 0.35 + 0.08,
+      isGold: j < 4
     });
   }
 
   function drawWave(wave, t) {
-    var scrollOffset = scrollY * 0.05;
-    var mouseInfluence = (mouseX - 0.5) * 15;
+    var scrollOffset = scrollY * 0.03;
+    var mouseInfluence = (mouseX - 0.5) * 6;
     var baseY = h * wave.yOff + scrollOffset;
+    // Slow time factor — like watching real water
+    var st = t * 0.4;
 
     ctx.beginPath();
     ctx.moveTo(0, h);
 
-    for (var x = 0; x <= w; x += 3) {
+    for (var x = 0; x <= w; x += 4) {
       var distFromMouse = Math.abs(x / w - mouseX);
-      var mouseBulge = Math.exp(-distFromMouse * distFromMouse * 8) * 12 * (mouseY - 0.5);
+      var mouseBulge = Math.exp(-distFromMouse * distFromMouse * 6) * 8 * (mouseY - 0.5);
 
+      // Primary swell — long, slow, dominant
       var y = baseY
-        + Math.sin(x * wave.freq + t * wave.speed * 60 + scrollOffset * 0.01) * wave.amp
-        + Math.sin(x * wave.freq * 2.3 + t * wave.speed * 40) * wave.amp * 0.4
-        + Math.cos(x * wave.freq * 0.7 + t * wave.speed * 25) * wave.amp * 0.3
-        + mouseInfluence * Math.sin(x * 0.005 + t * 0.02)
+        + Math.sin(x * wave.freq + st * wave.speed * 10) * wave.amp
+        // Secondary ripple — smaller, slightly faster
+        + Math.sin(x * wave.freq * 1.8 + st * wave.speed * 14 + 1.3) * wave.amp * 0.3
+        // Tertiary texture — gentle surface variation
+        + Math.cos(x * wave.freq * 3.1 + st * wave.speed * 8 + 2.7) * wave.amp * 0.12
+        // Very slow deep undulation
+        + Math.sin(x * wave.freq * 0.4 + st * 0.001) * wave.amp * 0.5
+        + mouseInfluence * Math.sin(x * 0.003 + st * 0.005)
         + mouseBulge;
 
       ctx.lineTo(x, y);
@@ -303,9 +310,9 @@ function initParticles() {
   function drawCaustics(t) {
     for (var i = 0; i < caustics.length; i++) {
       var c = caustics[i];
-      var cx = (c.x + Math.sin(t * 0.3 + c.phase) * 0.1) * w;
-      var cy = (c.y + Math.cos(t * 0.2 + c.phase) * 0.08 + scrollY * 0.0001) * h;
-      var pulse = 0.7 + Math.sin(t * c.speed * 200 + c.phase) * 0.3;
+      var cx = (c.x + Math.sin(t * 0.08 + c.phase) * 0.06) * w;
+      var cy = (c.y + Math.cos(t * 0.05 + c.phase) * 0.04 + scrollY * 0.00005) * h;
+      var pulse = 0.8 + Math.sin(t * c.speed * 60 + c.phase) * 0.2;
       var r = c.size * pulse;
 
       var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
@@ -315,8 +322,8 @@ function initParticles() {
       ctx.fillStyle = grad;
       ctx.fillRect(cx - r, cy - r, r * 2, r * 2);
 
-      c.x += c.drift;
-      c.y += Math.sin(t + c.phase) * 0.00005;
+      c.x += c.drift * 0.3;
+      c.y += Math.sin(t * 0.1 + c.phase) * 0.00002;
       if (c.x > 1.5) c.x = -0.5;
       if (c.x < -0.5) c.x = 1.5;
     }
@@ -325,9 +332,9 @@ function initParticles() {
   function drawMotes(t) {
     for (var i = 0; i < motes.length; i++) {
       var m = motes[i];
-      var px = m.x * w + Math.sin(t * 0.5 + m.phase) * 20;
+      var px = m.x * w + Math.sin(t * 0.12 + m.phase) * 15;
       var py = m.y * h;
-      var flicker = 0.6 + Math.sin(t * 2 + m.phase) * 0.4;
+      var flicker = 0.7 + Math.sin(t * 0.4 + m.phase) * 0.3;
 
       ctx.beginPath();
       ctx.arc(px, py, m.size, 0, Math.PI * 2);
@@ -338,7 +345,7 @@ function initParticles() {
       }
       ctx.fill();
 
-      m.x += m.speedX + Math.sin(t + m.phase) * 0.00005;
+      m.x += m.speedX + Math.sin(t * 0.1 + m.phase) * 0.00002;
       m.y += m.speedY;
       if (m.y < -0.02) { m.y = 1.02; m.x = Math.random(); }
       if (m.x > 1.05) m.x = -0.05;
