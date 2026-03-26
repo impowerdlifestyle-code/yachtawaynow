@@ -12,7 +12,12 @@ export default async function handler(req, res) {
   try {
     const response = await fetch('https://formspree.io/f/xpwdqbkr', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Referer': 'https://www.yachtawaynow.com/',
+        'Origin': 'https://www.yachtawaynow.com',
+      },
       body: JSON.stringify({
         first_name,
         last_name: last_name || '',
@@ -28,7 +33,9 @@ export default async function handler(req, res) {
     });
 
     if (!response.ok) {
-      return res.status(500).json({ error: 'Failed to submit booking' });
+      const errText = await response.text();
+      console.error('Formspree error:', response.status, errText);
+      return res.status(500).json({ error: 'Failed to submit booking', detail: errText });
     }
 
     return res.status(200).json({ success: true });
