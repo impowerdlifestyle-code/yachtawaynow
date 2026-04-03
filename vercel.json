@@ -1,6 +1,9 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/yacht-rental-tampa", "destination": "/yacht-charter-tampa", "statusCode": 301 }
+  ],
   "headers": [
     {
       "source": "/(.*)",
