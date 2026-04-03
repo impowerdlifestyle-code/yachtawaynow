@@ -437,9 +437,12 @@ function initChatWidget() {
           '<button onclick="sendChat()" style="width:40px;height:40px;border-radius:50%;border:none;background:linear-gradient(135deg,#b8912e,#d4a853,#ffe5a0,#d4a853);background-size:200% auto;color:#0b1d2e;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">&#10148;</button>' +
         '</div>' +
       '</div>' +
-      '<button id="chat-toggle" onclick="toggleChat()" style="width:60px;height:60px;border-radius:50%;border:none;background:linear-gradient(135deg,#b8912e,#d4a853,#ffe5a0,#f0d48a,#d4a853,#b8912e);background-size:200% auto;color:#0b1d2e;font-size:1.6rem;cursor:pointer;box-shadow:0 4px 20px rgba(212,168,83,0.4),0 0 30px rgba(212,168,83,0.15);animation:goldShimmer 5s ease infinite;transition:all 0.3s ease;">' +
-        '&#9875;' +
-      '</button>' +
+      '<div style="display:flex;align-items:center;gap:10px;">' +
+        '<div id="chat-label" style="background:#0a1f30;color:#f0f7fa;padding:8px 16px;border-radius:50px;font-size:0.82rem;font-weight:600;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,0.3);border:1px solid #163248;">Chat With Us</div>' +
+        '<button id="chat-toggle" onclick="toggleChat()" style="width:60px;height:60px;border-radius:50%;border:none;background:linear-gradient(135deg,#b8912e,#d4a853,#ffe5a0,#f0d48a,#d4a853,#b8912e);background-size:200% auto;color:#0b1d2e;font-size:1.6rem;cursor:pointer;box-shadow:0 4px 20px rgba(212,168,83,0.4),0 0 30px rgba(212,168,83,0.15);animation:goldShimmer 5s ease infinite;transition:all 0.3s ease;flex-shrink:0;">' +
+          '&#9875;' +
+        '</button>' +
+      '</div>' +
     '</div>';
 
   document.body.insertAdjacentHTML('beforeend', chatHTML);
@@ -450,13 +453,14 @@ var chatHistory = [];
 function toggleChat() {
   var win = document.getElementById('chat-window');
   var btn = document.getElementById('chat-toggle');
+  var label = document.getElementById('chat-label');
   if (win.style.display === 'none' || win.style.display === '') {
     win.style.display = 'flex';
-    btn.style.display = 'none';
+    btn.parentElement.style.display = 'none';
     document.getElementById('chat-input').focus();
   } else {
     win.style.display = 'none';
-    btn.style.display = 'block';
+    btn.parentElement.style.display = 'flex';
   }
 }
 
