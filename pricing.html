@@ -36,8 +36,12 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Yacht Charter Pricing",
+    "name": "Yacht Charter Pricing — Yacht Away Now",
     "url": "https://www.yachtawaynow.com/pricing",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".price-card-amount", ".price-card-detail", ".price-features", ".section-subtitle"]
+    },
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": [
@@ -48,6 +52,8 @@
           "description": "4-hour minimum private yacht charter with 2 cabins and 3 decks, professional captain and crew, premium high-quality stereo, up to 13 guests.",
           "price": "300",
           "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.yachtawaynow.com/pricing",
           "priceSpecification": { "@type": "UnitPriceSpecification", "price": "300", "priceCurrency": "USD", "unitText": "hour" },
           "seller": { "@type": "LocalBusiness", "name": "Yacht Away Now", "telephone": "+17276092248" }
         },
@@ -58,6 +64,8 @@
           "description": "4-hour weekend charter (11am-2pm) from $2,000 or 5-hour charter (2:30pm-7:30pm) for $2,500.",
           "price": "2000",
           "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.yachtawaynow.com/pricing",
           "seller": { "@type": "LocalBusiness", "name": "Yacht Away Now", "telephone": "+17276092248" }
         },
         {
@@ -67,6 +75,8 @@
           "description": "Multi-day yacht charter to the Florida Keys and Bahamas with full cabin accommodations and 600-mile range.",
           "price": "5000",
           "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.yachtawaynow.com/pricing",
           "seller": { "@type": "LocalBusiness", "name": "Yacht Away Now", "telephone": "+17276092248" }
         }
       ]
@@ -81,18 +91,6 @@
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.yachtawaynow.com"},
       {"@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://www.yachtawaynow.com/pricing"}
     ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Pricing — Yacht Away Now",
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": [".price-card-amount", ".price-card-detail", ".price-features", ".section-subtitle"]
-    },
-    "url": "https://www.yachtawaynow.com/pricing"
   }
   </script>
   <script type="application/ld+json">
@@ -195,8 +193,8 @@
 
       <div class="pricing-card reveal">
         <div class="pricing-card-image"><picture>
-  <source srcset="/images/charter-img_1180.webp" type="image/webp">
-  <img src="/images/charter-img_1180.jpg" alt="Yacht docked at the St. Petersburg marina" width="600" height="300" loading="lazy">
+  <source srcset="/images/yacht-turquoise-hero.webp" type="image/webp">
+  <img src="/images/yacht-turquoise-hero.jpg" alt="Luxury yacht anchored in turquoise Gulf waters" width="600" height="300" fetchpriority="high">
 </picture></div>
         <div class="pricing-badge" style="background:rgba(26,139,179,0.12);border-color:rgba(26,139,179,0.25);color:var(--ocean-light);">Weekday</div>
         <div class="pricing-header">
@@ -224,8 +222,8 @@
 
       <div class="pricing-card featured reveal">
         <div class="pricing-card-image"><picture>
-  <source srcset="/images/charter-img_0815.webp" type="image/webp">
-  <img src="/images/charter-img_0815.jpg" alt="Luxury yacht front view at marina" width="600" height="300" loading="lazy">
+  <source srcset="/images/yacht-sandbar.webp" type="image/webp">
+  <img src="/images/yacht-sandbar.jpg" alt="Yacht anchored at sandbar in crystal clear teal water" width="600" height="300" loading="lazy">
 </picture></div>
         <div class="pricing-badge">Most Popular</div>
         <div class="pricing-header">
@@ -252,8 +250,8 @@
 
       <div class="pricing-card reveal">
         <div class="pricing-card-image"><picture>
-  <source srcset="/images/charter-img_0877.webp" type="image/webp">
-  <img src="/images/charter-img_0877.jpg" alt="Yacht illuminated at night" width="600" height="300" loading="lazy">
+  <source srcset="/images/yacht-rear-angle.webp" type="image/webp">
+  <img src="/images/yacht-rear-angle.jpg" alt="Yacht rear view in turquoise waters ready for adventure" width="600" height="300" loading="lazy">
 </picture></div>
         <div class="pricing-badge" style="background:rgba(78,205,196,0.12);border-color:rgba(78,205,196,0.25);color:var(--seafoam);">Adventure</div>
         <div class="pricing-header">
@@ -280,18 +278,714 @@
 
     </div>
 
-    <div class="reveal" style="text-align:center;margin-top:40px;">
-      <p style="color:var(--gray-400);font-size:0.95rem;"><strong style="color:var(--gold);">Additional yachts available upon request</strong> — <a href="/contact" style="color:var(--gold);">contact us</a> for custom quotes.</p>
+  </div>
+</section>
+
+<section class="section" id="estimate" style="padding-top:0;">
+  <div class="container" style="max-width:800px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div class="section-label">Instant Pricing</div>
+      <h2 class="section-title">Free Charter <em>Estimate</em></h2>
+      <p style="color:var(--gray-400);max-width:560px;margin:0 auto;font-size:0.9rem;line-height:1.7;">Build your perfect charter and see an instant price estimate. No obligation — just a quick way to plan your budget.</p>
     </div>
 
-    <div class="reveal" style="text-align:center;margin-top:40px;">
-      <div style="background:var(--dark-card);border:1px solid var(--dark-border);border-radius:var(--radius-lg);padding:40px;max-width:800px;margin:0 auto;">
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;margin-bottom:8px;">Custom Packages Available</h3>
-        <p style="color:var(--gray-400);line-height:1.7;margin-bottom:0;">Charter starts at booking time. Custom packages available — <a href="tel:7276092248" style="color:var(--gold);font-weight:600;">call (727) 609-2248</a> to discuss your perfect voyage.</p>
+    <div class="reveal" style="background:linear-gradient(145deg,rgba(12,21,36,0.9),rgba(10,31,48,0.85));border:1px solid rgba(78,205,196,0.12);border-radius:16px;padding:40px;position:relative;">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#4ecdc4,#c9a84c,#4ecdc4,transparent);border-radius:16px 16px 0 0;"></div>
+
+      <!-- Step 1: Day Type -->
+      <div style="margin-bottom:28px;">
+        <label style="display:block;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6b7a8d;margin-bottom:12px;">Step 1 — When are you going?</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;" id="calcDayType">
+          <button class="calc-opt" data-val="weekday" onclick="setDayType('weekday')">
+            <span class="calc-opt-label">Weekday</span>
+            <span class="calc-opt-sub">Mon — Fri</span>
+          </button>
+          <button class="calc-opt" data-val="weekend" onclick="setDayType('weekend')">
+            <span class="calc-opt-label">Weekend</span>
+            <span class="calc-opt-sub">Sat — Sun</span>
+          </button>
+          <button class="calc-opt" data-val="custom" onclick="setDayType('custom')">
+            <span class="calc-opt-label">Custom Trip</span>
+            <span class="calc-opt-sub">Overnight / Multi-day</span>
+          </button>
+        </div>
       </div>
+
+      <!-- Step 2: Duration (weekday) or Time Slot (weekend) -->
+      <div id="calcStep2Weekday" style="display:none;margin-bottom:28px;">
+        <label style="display:block;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6b7a8d;margin-bottom:12px;">Step 2 — How many hours?</label>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <button class="calc-minus" onclick="adjustHours(-1)">−</button>
+          <div style="text-align:center;min-width:80px;">
+            <div id="calcHours" style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#f5f0e8;line-height:1;">4</div>
+            <div style="font-size:0.7rem;color:#6b7a8d;text-transform:uppercase;letter-spacing:0.08em;">hours</div>
+          </div>
+          <button class="calc-plus" onclick="adjustHours(1)">+</button>
+        </div>
+        <div style="font-size:0.75rem;color:#4a5568;margin-top:8px;">4-hour minimum</div>
+      </div>
+
+      <div id="calcStep2Weekend" style="display:none;margin-bottom:28px;">
+        <label style="display:block;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6b7a8d;margin-bottom:12px;">Step 2 — Choose your cruise</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;" id="calcWeekendSlot">
+          <button class="calc-opt" data-val="wknd4" onclick="setWeekendSlot('wknd4')">
+            <span class="calc-opt-label">Day Cruise</span>
+            <span class="calc-opt-sub">4 hours &bull; 11am — 3pm</span>
+          </button>
+          <button class="calc-opt" data-val="wknd5" onclick="setWeekendSlot('wknd5')">
+            <span class="calc-opt-label">Sunset Cruise</span>
+            <span class="calc-opt-sub">5 hours &bull; 2:30 — 7:30pm</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Custom Trip Questionnaire -->
+      <div id="calcStep2Custom" style="display:none;margin-bottom:28px;">
+
+        <!-- Custom Q progress -->
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:20px;">
+          <div style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6b7a8d;">Custom Quote</div>
+          <div style="flex:1;height:3px;background:rgba(78,205,196,0.1);border-radius:3px;overflow:hidden;">
+            <div id="cqProgress" style="width:0%;height:100%;background:linear-gradient(90deg,#4ecdc4,#c9a84c);border-radius:3px;transition:width 0.4s ease;"></div>
+          </div>
+          <div id="cqStepLabel" style="font-size:0.7rem;color:#4a5568;">0 / 7</div>
+        </div>
+
+        <!-- Q1: Destination -->
+        <div class="cq-step" id="cq1">
+          <div class="cq-question">Where would you like to go?</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <button class="calc-opt cq-choice" data-field="cqDest" data-val="Tampa Bay Area" onclick="cqSelect(this, 'cqDest', 1)">
+              <span class="calc-opt-label">Tampa Bay</span>
+              <span class="calc-opt-sub">Egmont Key, Shell Key, Skyway</span>
+            </button>
+            <button class="calc-opt cq-choice" data-field="cqDest" data-val="Florida Keys" onclick="cqSelect(this, 'cqDest', 1)">
+              <span class="calc-opt-label">Florida Keys</span>
+              <span class="calc-opt-sub">Key West & islands</span>
+            </button>
+            <button class="calc-opt cq-choice" data-field="cqDest" data-val="Bahamas" onclick="cqSelect(this, 'cqDest', 1)">
+              <span class="calc-opt-label">Bahamas</span>
+              <span class="calc-opt-sub">Nassau, Exumas, Bimini</span>
+            </button>
+            <button class="calc-opt cq-choice" data-field="cqDest" data-val="Not Sure" onclick="cqSelect(this, 'cqDest', 1)">
+              <span class="calc-opt-label">Not Sure Yet</span>
+              <span class="calc-opt-sub">Help me decide</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Q2: Duration -->
+        <div class="cq-step" id="cq2" style="display:none;">
+          <div class="cq-question">How many days?</div>
+          <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;">
+            <button class="calc-opt cq-choice" data-field="cqDays" data-val="4 Hours" onclick="cqSelect(this, 'cqDays', 2)">
+              <span class="calc-opt-label">4 Hours</span>
+              <span class="calc-opt-sub">Half-day trip</span>
+            </button>
+            <button class="calc-opt cq-choice" data-field="cqDays" data-val="8 Hours" onclick="cqSelect(this, 'cqDays', 2)">
+              <span class="calc-opt-label">8 Hours</span>
+              <span class="calc-opt-sub">Full day trip</span>
+            </button>
+            <button class="calc-opt cq-choice" data-field="cqDays" data-val="1" onclick="cqSelect(this, 'cqDays', 2)">
+              <span class="calc-opt-label">1 Day</span>
+              <span class="calc-opt-sub">Full day charter</span>
+            </button>
+            <button class="calc-opt cq-choice" data-field="cqDays" data-val="2" onclick="cqSelect(this, 'cqDays', 2)">
+              <span class="calc-opt-label">2 Days</span>
+              <span class="calc-opt-sub">Overnight</span>
+            </button>
+            <button class="calc-opt cq-choice" data-field="cqDays" data-val="3" onclick="cqSelect(this, 'cqDays', 2)">
+              <span class="calc-opt-label">3 Days</span>
+              <span class="calc-opt-sub">Weekend trip</span>
+            </button>
+            <button class="calc-opt cq-choice" data-field="cqDays" data-val="custom" onclick="cqSelect(this, 'cqDays', 2)">
+              <span class="calc-opt-label">4+ Days</span>
+              <span class="calc-opt-sub">Extended voyage</span>
+            </button>
+          </div>
+          <div id="cqDaysCustom" style="display:none;margin-top:12px;">
+            <input type="number" id="cqDaysInput" min="4" max="30" value="5" placeholder="Number of days" class="cq-input">
+          </div>
+        </div>
+
+        <!-- Q3: Guests -->
+        <div class="cq-step" id="cq3" style="display:none;">
+          <div class="cq-question">How many guests?</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div>
+              <label class="cq-label">Adults</label>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <button class="calc-minus" onclick="cqAdjust('cqAdults',-1)">−</button>
+                <div id="cqAdults" style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:#f5f0e8;min-width:40px;text-align:center;">2</div>
+                <button class="calc-plus" onclick="cqAdjust('cqAdults',1)">+</button>
+              </div>
+            </div>
+            <div>
+              <label class="cq-label">Children</label>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <button class="calc-minus" onclick="cqAdjust('cqChildren',-1)">−</button>
+                <div id="cqChildren" style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:#f5f0e8;min-width:40px;text-align:center;">0</div>
+                <button class="calc-plus" onclick="cqAdjust('cqChildren',1)">+</button>
+              </div>
+            </div>
+          </div>
+          <div style="font-size:0.72rem;color:#4a5568;margin-top:10px;">Maximum 13 guests total</div>
+          <button class="cq-next-btn" onclick="cqNext(3)">Continue</button>
+        </div>
+
+        <!-- Q4: Occasion -->
+        <div class="cq-step" id="cq4" style="display:none;">
+          <div class="cq-question">What's the occasion?</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;">
+            <button class="calc-opt-sm cq-choice" data-field="cqOccasion" data-val="Vacation" onclick="cqSelect(this,'cqOccasion',4)">Vacation</button>
+            <button class="calc-opt-sm cq-choice" data-field="cqOccasion" data-val="Anniversary" onclick="cqSelect(this,'cqOccasion',4)">Anniversary</button>
+            <button class="calc-opt-sm cq-choice" data-field="cqOccasion" data-val="Birthday" onclick="cqSelect(this,'cqOccasion',4)">Birthday</button>
+            <button class="calc-opt-sm cq-choice" data-field="cqOccasion" data-val="Honeymoon" onclick="cqSelect(this,'cqOccasion',4)">Honeymoon</button>
+            <button class="calc-opt-sm cq-choice" data-field="cqOccasion" data-val="Bachelor/ette" onclick="cqSelect(this,'cqOccasion',4)">Bachelor/ette</button>
+            <button class="calc-opt-sm cq-choice" data-field="cqOccasion" data-val="Corporate Retreat" onclick="cqSelect(this,'cqOccasion',4)">Corporate</button>
+            <button class="calc-opt-sm cq-choice" data-field="cqOccasion" data-val="Fishing Trip" onclick="cqSelect(this,'cqOccasion',4)">Fishing Trip</button>
+            <button class="calc-opt-sm cq-choice" data-field="cqOccasion" data-val="Other" onclick="cqSelect(this,'cqOccasion',4)">Other</button>
+          </div>
+        </div>
+
+        <!-- Q5: Activities -->
+        <div class="cq-step" id="cq5" style="display:none;">
+          <div class="cq-question">What activities interest you? <span style="font-size:0.75rem;color:#4a5568;">(select all that apply)</span></div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;" id="cqActivities">
+            <button class="calc-opt-sm cq-toggle" data-val="Island Hopping" onclick="cqToggle(this)">Island Hopping</button>
+            <button class="calc-opt-sm cq-toggle" data-val="Snorkeling" onclick="cqToggle(this)">Snorkeling</button>
+            <button class="calc-opt-sm cq-toggle" data-val="Fishing" onclick="cqToggle(this)">Fishing</button>
+            <button class="calc-opt-sm cq-toggle" data-val="Sandbar Hangout" onclick="cqToggle(this)">Sandbar Hangout</button>
+            <button class="calc-opt-sm cq-toggle" data-val="Sunset Viewing" onclick="cqToggle(this)">Sunset Viewing</button>
+            <button class="calc-opt-sm cq-toggle" data-val="Swimming" onclick="cqToggle(this)">Swimming</button>
+            <button class="calc-opt-sm cq-toggle" data-val="Dining On Board" onclick="cqToggle(this)">Dining On Board</button>
+            <button class="calc-opt-sm cq-toggle" data-val="Sightseeing" onclick="cqToggle(this)">Sightseeing</button>
+            <button class="calc-opt-sm cq-toggle" data-val="Water Sports" onclick="cqToggle(this)">Water Sports</button>
+            <button class="calc-opt-sm cq-toggle" data-val="Just Cruising" onclick="cqToggle(this)">Just Cruising</button>
+          </div>
+          <button class="cq-next-btn" onclick="cqNext(5)">Continue</button>
+        </div>
+
+        <!-- Q6: Preferred Dates -->
+        <div class="cq-step" id="cq6" style="display:none;">
+          <div class="cq-question">When would you like to go?</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div>
+              <label class="cq-label">Preferred Start Date</label>
+              <input type="date" id="cqStartDate" class="cq-input">
+            </div>
+            <div>
+              <label class="cq-label">Flexible?</label>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                <button class="calc-opt-sm cq-choice" data-field="cqFlex" data-val="Exact dates" onclick="cqSelect(this,'cqFlex',null)" style="padding:10px;">Exact Dates</button>
+                <button class="calc-opt-sm cq-choice" data-field="cqFlex" data-val="Flexible" onclick="cqSelect(this,'cqFlex',null)" style="padding:10px;">Flexible</button>
+              </div>
+            </div>
+          </div>
+          <button class="cq-next-btn" onclick="cqNext(6)">Continue</button>
+        </div>
+
+        <!-- Q7: Special Requests + Contact -->
+        <div class="cq-step" id="cq7" style="display:none;">
+          <div class="cq-question">Almost done! Any special requests?</div>
+          <div style="display:grid;grid-template-columns:1fr;gap:14px;">
+            <div>
+              <label class="cq-label">Special Requests or Questions</label>
+              <textarea id="cqRequests" rows="3" placeholder="Decorations, catering preferences, special needs, anything else we should know..." class="cq-input" style="resize:vertical;"></textarea>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+              <div>
+                <label class="cq-label">Your Name</label>
+                <input type="text" id="cqName" placeholder="Full name" class="cq-input" required>
+              </div>
+              <div>
+                <label class="cq-label">Phone Number</label>
+                <input type="tel" id="cqPhone" placeholder="(555) 123-4567" class="cq-input" required>
+              </div>
+            </div>
+            <div>
+              <label class="cq-label">Email Address</label>
+              <input type="email" id="cqEmail" placeholder="you@email.com" class="cq-input" required>
+            </div>
+            <div>
+              <label class="cq-label">Budget Range <span style="color:#4a5568;">(optional)</span></label>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;">
+                <button class="calc-opt-sm cq-choice" data-field="cqBudget" data-val="$3,000 - $5,000" onclick="cqSelect(this,'cqBudget',null)">$3k - $5k</button>
+                <button class="calc-opt-sm cq-choice" data-field="cqBudget" data-val="$5,000 - $10,000" onclick="cqSelect(this,'cqBudget',null)">$5k - $10k</button>
+                <button class="calc-opt-sm cq-choice" data-field="cqBudget" data-val="$10,000 - $20,000" onclick="cqSelect(this,'cqBudget',null)">$10k - $20k</button>
+                <button class="calc-opt-sm cq-choice" data-field="cqBudget" data-val="$20,000+" onclick="cqSelect(this,'cqBudget',null)">$20k+</button>
+              </div>
+            </div>
+          </div>
+          <button class="cq-next-btn cq-submit-btn" onclick="cqSubmit()" id="cqSubmitBtn">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            Get My Custom Quote
+          </button>
+        </div>
+
+        <!-- Custom Quote Success -->
+        <div id="cqSuccess" style="display:none;text-align:center;padding:32px 20px;">
+          <svg width="48" height="48" fill="none" stroke="#4ecdc4" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;margin:16px 0 8px;color:#c9a84c;">Custom Quote Request Sent!</h3>
+          <p style="color:#8899aa;font-size:0.9rem;line-height:1.7;">Our team will review your trip details and get back to you within 24 hours with a personalized quote.</p>
+          <a href="tel:7276092248" style="display:inline-flex;align-items:center;gap:6px;color:#4ecdc4;font-size:0.85rem;margin-top:16px;font-weight:600;">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Or call (727) 609-2248 now
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Step 3: Occasion (optional, for personalized CTA) -->
+      <div id="calcStep3" style="display:none;margin-bottom:28px;">
+        <label style="display:block;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6b7a8d;margin-bottom:12px;">Step 3 — What's the occasion? <span style="color:#4a5568;">(optional)</span></label>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;" id="calcOccasion">
+          <button class="calc-opt-sm" data-val="Sunset Cruise" onclick="setOccasion(this)">Sunset Cruise</button>
+          <button class="calc-opt-sm" data-val="Birthday" onclick="setOccasion(this)">Birthday</button>
+          <button class="calc-opt-sm" data-val="Bachelorette" onclick="setOccasion(this)">Bachelorette</button>
+          <button class="calc-opt-sm" data-val="Anniversary" onclick="setOccasion(this)">Anniversary</button>
+          <button class="calc-opt-sm" data-val="Corporate" onclick="setOccasion(this)">Corporate</button>
+          <button class="calc-opt-sm" data-val="Family Day" onclick="setOccasion(this)">Family Day</button>
+          <button class="calc-opt-sm" data-val="Wedding" onclick="setOccasion(this)">Wedding</button>
+          <button class="calc-opt-sm" data-val="Just Because" onclick="setOccasion(this)">Just Because</button>
+        </div>
+      </div>
+
+      <!-- Estimate Result -->
+      <div id="calcResult" style="display:none;margin-top:8px;padding:28px;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:12px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;">
+          <div>
+            <div style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6b7a8d;margin-bottom:4px;">Estimated Total</div>
+            <div id="calcEstimate" style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;color:#c9a84c;line-height:1;"></div>
+            <div id="calcNote" style="font-size:0.75rem;color:#6b7a8d;margin-top:4px;"></div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6b7a8d;margin-bottom:4px;">Deposit to Book</div>
+            <div id="calcDeposit" style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:#4ecdc4;line-height:1;"></div>
+            <div style="font-size:0.7rem;color:#6b7a8d;margin-top:4px;">Refundable &bull; Min $1,000</div>
+          </div>
+        </div>
+
+        <!-- Breakdown -->
+        <div id="calcBreakdown" style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(78,205,196,0.1);"></div>
+
+        <!-- CTA -->
+        <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;">
+          <a id="calcBookBtn" href="/contact" class="btn btn-gold" style="flex:1;justify-content:center;min-width:200px;">
+            Book This Charter
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:7276092248" class="btn btn-outline" style="justify-content:center;min-width:180px;">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Call for Custom Quote
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
+<style>
+  .calc-opt {
+    padding: 16px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(78,205,196,0.12);
+    background: rgba(11,29,46,0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #f5f0e8;
+  }
+  .calc-opt:hover { border-color: rgba(78,205,196,0.3); background: rgba(11,29,46,0.7); }
+  .calc-opt.active { border-color: #c9a84c; background: rgba(201,168,76,0.08); box-shadow: 0 0 20px rgba(201,168,76,0.1); }
+  .calc-opt-label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 2px; }
+  .calc-opt.active .calc-opt-label { color: #c9a84c; }
+  .calc-opt-sub { display: block; font-size: 0.72rem; color: #6b7a8d; }
+
+  .calc-opt-sm {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(78,205,196,0.12);
+    background: rgba(11,29,46,0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #8899aa;
+  }
+  .calc-opt-sm:hover { border-color: rgba(78,205,196,0.3); color: #f5f0e8; }
+  .calc-opt-sm.active { border-color: #c9a84c; background: rgba(201,168,76,0.08); color: #c9a84c; }
+
+  .calc-minus, .calc-plus {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(78,205,196,0.2);
+    background: rgba(11,29,46,0.6);
+    color: #4ecdc4;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .calc-minus:hover, .calc-plus:hover { background: rgba(78,205,196,0.1); border-color: #4ecdc4; }
+
+  .breakdown-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #8899aa;
+    padding: 4px 0;
+  }
+  .breakdown-line.total {
+    color: #f5f0e8;
+    font-weight: 600;
+    border-top: 1px solid rgba(78,205,196,0.1);
+    padding-top: 10px;
+    margin-top: 6px;
+  }
+
+  /* Custom questionnaire styles */
+  .cq-step {
+    animation: cqFadeIn 0.35s ease;
+    margin-bottom: 8px;
+  }
+  @keyframes cqFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .cq-question {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #f5f0e8;
+    margin-bottom: 14px;
+  }
+  .cq-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #4a5568;
+    margin-bottom: 6px;
+  }
+  .cq-input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: rgba(11,29,46,0.8);
+    border: 1px solid rgba(78,205,196,0.12);
+    color: #f5f0e8;
+    font-family: Montserrat, sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .cq-input:focus { border-color: #4ecdc4; }
+  .cq-next-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 12px 28px;
+    border-radius: 50px;
+    background: rgba(78,205,196,0.1);
+    border: 1px solid rgba(78,205,196,0.25);
+    color: #4ecdc4;
+    font-family: Montserrat, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.04em;
+  }
+  .cq-next-btn:hover { background: rgba(78,205,196,0.15); border-color: #4ecdc4; transform: translateY(-1px); }
+  .cq-submit-btn {
+    background: linear-gradient(135deg,#b8912e,#d4a853,#ffe5a0,#d4a853);
+    background-size: 200% auto;
+    color: #0a1628;
+    border: none;
+    padding: 14px 32px;
+    font-size: 0.85rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .cq-submit-btn:hover { background-position: right center; box-shadow: 0 8px 30px rgba(201,168,76,0.25); }
+  .cq-toggle.active { border-color: #4ecdc4; background: rgba(78,205,196,0.1); color: #4ecdc4; }
+  @media (max-width: 768px) {
+    #calcDayType { grid-template-columns: 1fr !important; }
+    .cq-question { font-size: 1.05rem; }
+  }
+</style>
+
+<script>
+(function() {
+  let dayType = '';
+  let hours = 4;
+  let weekendSlot = '';
+  let occasion = '';
+
+  window.setDayType = function(type) {
+    dayType = type;
+    document.querySelectorAll('#calcDayType .calc-opt').forEach(b => b.classList.toggle('active', b.dataset.val === type));
+
+    const step2W = document.getElementById('calcStep2Weekday');
+    const step2WE = document.getElementById('calcStep2Weekend');
+    const step2C = document.getElementById('calcStep2Custom');
+    const step3 = document.getElementById('calcStep3');
+
+    step2W.style.display = 'none';
+    step2WE.style.display = 'none';
+    step2C.style.display = 'none';
+    weekendSlot = '';
+    document.querySelectorAll('#calcWeekendSlot .calc-opt').forEach(b => b.classList.remove('active'));
+
+    if (type === 'weekday') {
+      step2W.style.display = 'block';
+    } else if (type === 'weekend') {
+      step2WE.style.display = 'block';
+    } else if (type === 'custom') {
+      step2C.style.display = 'block';
+      step3.style.display = 'none';
+      document.getElementById('calcResult').style.display = 'none';
+      return;
+    }
+    step3.style.display = 'block';
+    updateEstimate();
+  };
+
+  window.setWeekendSlot = function(slot) {
+    weekendSlot = slot;
+    document.querySelectorAll('#calcWeekendSlot .calc-opt').forEach(b => b.classList.toggle('active', b.dataset.val === slot));
+    updateEstimate();
+  };
+
+  window.adjustHours = function(delta) {
+    hours = Math.max(4, Math.min(12, hours + delta));
+    document.getElementById('calcHours').textContent = hours;
+    updateEstimate();
+  };
+
+  window.setOccasion = function(btn) {
+    document.querySelectorAll('#calcOccasion .calc-opt-sm').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    occasion = btn.dataset.val;
+    updateEstimate();
+  };
+
+  function updateEstimate() {
+    const result = document.getElementById('calcResult');
+
+    if (dayType === 'weekday') {
+      // $300/hr charter + $50/hr fuel + $100/hr captain
+      const charterCost = hours * 300;
+      const fuelCost = hours * 50;
+      const captainCost = hours * 100;
+      const total = charterCost + fuelCost + captainCost;
+      const deposit = Math.max(1000, Math.round(total * 0.5));
+
+      document.getElementById('calcEstimate').textContent = '$' + total.toLocaleString();
+      document.getElementById('calcDeposit').textContent = '$' + deposit.toLocaleString();
+      document.getElementById('calcNote').textContent = hours + '-hour weekday charter';
+      document.getElementById('calcBreakdown').innerHTML =
+        '<div class="breakdown-line"><span>Vessel charter (' + hours + ' hrs x $300)</span><span>$' + charterCost.toLocaleString() + '</span></div>' +
+        '<div class="breakdown-line"><span>Fuel surcharge (' + hours + ' hrs x $50)</span><span>$' + fuelCost.toLocaleString() + '</span></div>' +
+        '<div class="breakdown-line"><span>Captain fee (' + hours + ' hrs x $100)</span><span>$' + captainCost.toLocaleString() + '</span></div>' +
+        '<div class="breakdown-line total"><span>Estimated Total</span><span>$' + total.toLocaleString() + '</span></div>';
+
+      result.style.display = 'block';
+      updateBookBtn(total);
+
+    } else if (dayType === 'weekend' && weekendSlot) {
+      const total = weekendSlot === 'wknd4' ? 2000 : 2500;
+      const hrs = weekendSlot === 'wknd4' ? 4 : 5;
+      const timeSlot = weekendSlot === 'wknd4' ? '11am — 3pm' : '2:30pm — 7:30pm';
+      const deposit = Math.max(1000, Math.round(total * 0.5));
+
+      document.getElementById('calcEstimate').textContent = '$' + total.toLocaleString();
+      document.getElementById('calcDeposit').textContent = '$' + deposit.toLocaleString();
+      document.getElementById('calcNote').textContent = hrs + '-hour weekend cruise &bull; ' + timeSlot;
+      document.getElementById('calcBreakdown').innerHTML =
+        '<div class="breakdown-line"><span>Weekend ' + hrs + '-hour package</span><span>$' + total.toLocaleString() + '</span></div>' +
+        '<div class="breakdown-line"><span>Captain & crew</span><span style="color:#4ecdc4;">Included</span></div>' +
+        '<div class="breakdown-line"><span>Fuel</span><span style="color:#4ecdc4;">Included</span></div>' +
+        '<div class="breakdown-line total"><span>All-Inclusive Total</span><span>$' + total.toLocaleString() + '</span></div>';
+
+      result.style.display = 'block';
+      updateBookBtn(total);
+
+    } else {
+      result.style.display = 'none';
+    }
+  }
+
+  function updateBookBtn(total, customType) {
+    const ct = customType || occasion || 'Charter';
+    const btn = document.getElementById('calcBookBtn');
+    btn.href = '/contact?charter_type=' + encodeURIComponent(ct) + '&total=' + total;
+  }
+
+  // ============================================
+  // CUSTOM QUESTIONNAIRE
+  // ============================================
+  const cqData = {};
+  let cqStep = 0;
+  const CQ_TOTAL = 7;
+
+  function cqUpdateProgress() {
+    const pct = Math.round((cqStep / CQ_TOTAL) * 100);
+    document.getElementById('cqProgress').style.width = pct + '%';
+    document.getElementById('cqStepLabel').textContent = cqStep + ' / ' + CQ_TOTAL;
+  }
+
+  function cqShowStep(n) {
+    // Show step n, keep all previous visible (stacked questionnaire feel)
+    const el = document.getElementById('cq' + n);
+    if (el) {
+      el.style.display = 'block';
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  window.cqSelect = function(btn, field, stepIndex) {
+    // Deselect siblings with same field
+    document.querySelectorAll('.cq-choice[data-field="' + field + '"]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    cqData[field] = btn.dataset.val;
+
+    // Handle special cases
+    if (field === 'cqDays' && btn.dataset.val === 'custom') {
+      document.getElementById('cqDaysCustom').style.display = 'block';
+      cqData.cqDays = document.getElementById('cqDaysInput').value || '5';
+    } else if (field === 'cqDays') {
+      document.getElementById('cqDaysCustom').style.display = 'none';
+    }
+
+    // Advance to next step if stepIndex provided
+    if (stepIndex !== null && stepIndex !== undefined) {
+      cqStep = stepIndex + 1;
+      cqUpdateProgress();
+      setTimeout(function() { cqShowStep(stepIndex + 1); }, 300);
+    }
+  };
+
+  window.cqToggle = function(btn) {
+    btn.classList.toggle('active');
+  };
+
+  window.cqAdjust = function(id, delta) {
+    const el = document.getElementById(id);
+    let val = parseInt(el.textContent) || 0;
+    val = Math.max(0, Math.min(13, val + delta));
+    // Ensure adults don't go below 1
+    if (id === 'cqAdults') val = Math.max(1, val);
+    // Check total doesn't exceed 13
+    const adults = parseInt(document.getElementById('cqAdults').textContent) || 0;
+    const children = parseInt(document.getElementById('cqChildren').textContent) || 0;
+    const otherVal = id === 'cqAdults' ? children : adults;
+    if (val + otherVal > 13) val = 13 - otherVal;
+    el.textContent = val;
+  };
+
+  window.cqNext = function(fromStep) {
+    cqStep = fromStep + 1;
+    cqUpdateProgress();
+    cqShowStep(fromStep + 1);
+  };
+
+  window.cqSubmit = async function() {
+    const name = document.getElementById('cqName').value.trim();
+    const email = document.getElementById('cqEmail').value.trim();
+    const phone = document.getElementById('cqPhone').value.trim();
+
+    if (!name || !email || !phone) {
+      alert('Please fill in your name, email, and phone number.');
+      return;
+    }
+
+    const btn = document.getElementById('cqSubmitBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" style="animation:spin 1s linear infinite"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="60 30"/></svg> Sending...';
+
+    // Collect activities
+    const activities = [];
+    document.querySelectorAll('#cqActivities .cq-toggle.active').forEach(b => activities.push(b.dataset.val));
+
+    const days = cqData.cqDays === 'custom' ? (document.getElementById('cqDaysInput').value || '5') : (cqData.cqDays || 'Not specified');
+    const adults = document.getElementById('cqAdults').textContent;
+    const children = document.getElementById('cqChildren').textContent;
+
+    const message = [
+      'CUSTOM CHARTER QUOTE REQUEST',
+      '========================================',
+      '',
+      'Name:            ' + name,
+      'Email:           ' + email,
+      'Phone:           ' + phone,
+      '',
+      'Destination:     ' + (cqData.cqDest || 'Not specified'),
+      'Duration:        ' + days + ' day(s)',
+      'Guests:          ' + adults + ' adults, ' + children + ' children',
+      'Occasion:        ' + (cqData.cqOccasion || 'Not specified'),
+      'Activities:      ' + (activities.length ? activities.join(', ') : 'None selected'),
+      'Start Date:      ' + (document.getElementById('cqStartDate').value || 'Flexible'),
+      'Flexibility:     ' + (cqData.cqFlex || 'Not specified'),
+      'Budget Range:    ' + (cqData.cqBudget || 'Not specified'),
+      'Special Requests: ' + (document.getElementById('cqRequests').value || 'None'),
+      '',
+      '========================================',
+      'Source: Custom Quote Calculator on yachtawaynow.com'
+    ].join('\n');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'dea9f1e3-2ab6-489f-bab2-9d003db7b977',
+          subject: 'Custom Charter Quote — ' + name + ' (' + (cqData.cqDest || 'Custom') + ')',
+          from_name: 'Yacht Away Now — Custom Quote',
+          reply_to: email,
+          message: message
+        })
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        cqStep = CQ_TOTAL;
+        cqUpdateProgress();
+        // Hide all steps, show success
+        for (let i = 1; i <= CQ_TOTAL; i++) {
+          document.getElementById('cq' + i).style.display = 'none';
+        }
+        document.getElementById('cqSuccess').style.display = 'block';
+      } else {
+        throw new Error('Failed');
+      }
+    } catch (err) {
+      alert('Something went wrong. Please call (727) 609-2248 directly.');
+      btn.disabled = false;
+      btn.innerHTML = '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> Get My Custom Quote';
+    }
+  };
+
+  // Add spin keyframe if not already present
+  if (!document.querySelector('style[data-calc-spin]')) {
+    const s = document.createElement('style');
+    s.setAttribute('data-calc-spin', '');
+    s.textContent = '@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}';
+    document.head.appendChild(s);
+  }
+})();
+</script>
 
 <section class="section" style="padding-top:0;">
   <div class="container reveal" style="max-width:800px;margin:0 auto;text-align:center;">
@@ -374,7 +1068,8 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 Yacht Away Now. All rights reserved.</p>
-      <div style="display:flex;gap:24px;"><a href="/privacy-policy">Privacy Policy</a><a href="/terms">Terms of Service</a></div>
+      <div style="display:flex;gap:24px;"><a href="/privacy-policy">Privacy Policy</a><a href="/terms">Terms of Service</a>
+        <a href="https://www.getmyboat.com/trips/6YzOvWLK/" target="_blank" rel="noopener">Find Us on GetMyBoat</a></div>
     </div>
   </div>
 </footer>
