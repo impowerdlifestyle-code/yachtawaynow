@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /contract
+Disallow: /competitive-analysis
 
 # AI Search Crawlers — Welcome
 User-agent: GPTBot
@@ -24,6 +26,18 @@ User-agent: anthropic-ai
 Allow: /
 
 User-agent: Bytespider
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Timesbot
 Allow: /
 
 # Training-only crawlers — Blocked
