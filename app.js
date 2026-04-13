@@ -66,6 +66,18 @@ function setActiveNav() {
   });
 }
 
+// ─── Google Calendar integration ───
+var GOOGLE_CALENDAR_WEBHOOK = 'https://script.google.com/macros/s/AKfycbyuzLmBEYRrZpsFLMPJ0uH2zRDOnprokKPHKrAd_mhnWa3LvWTjSylb_WRCa0zThSdP/exec';
+
+function addToGoogleCalendar(bookingData) {
+  fetch(GOOGLE_CALENDAR_WEBHOOK, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify(bookingData),
+    mode: 'no-cors'
+  }).catch(function() {});
+}
+
 // ─── Form handling (Formspree) ───
 function handleFormSubmit(e) {
   e.preventDefault();
@@ -75,7 +87,42 @@ function handleFormSubmit(e) {
     .then(function(r) {
       if (r.ok) {
         form.style.display = 'none';
-        document.getElementById('formSuccess').style.display = 'block';
+        var success = document.getElementById('formSuccess');
+        success.style.display = 'block';
+        // Add to Google Calendar
+        addToGoogleCalendar({
+          first_name: data.get('first_name') || '',
+          last_name: data.get('last_name') || '',
+          phone: data.get('phone') || '',
+          email: data.get('email') || '',
+          charter_type: data.get('charter_type') || '',
+          preferred_date: data.get('preferred_date') || '',
+          guests: data.get('guests') || '',
+          duration: data.get('duration') || '',
+          message: data.get('message') || ''
+        });
+        // Build contract page URL with booking details
+        var params = new URLSearchParams();
+        var fname = (data.get('first_name') || '').trim();
+        var lname = (data.get('last_name') || '').trim();
+        if (fname || lname) params.set('name', (fname + ' ' + lname).trim());
+        if (data.get('email')) params.set('email', data.get('email'));
+        if (data.get('phone')) params.set('phone', data.get('phone'));
+        if (data.get('charter_type')) params.set('charter_type', data.get('charter_type'));
+        if (data.get('preferred_date')) params.set('date', data.get('preferred_date'));
+        if (data.get('guests')) params.set('guests', data.get('guests'));
+        if (data.get('duration')) params.set('duration', data.get('duration'));
+        // Show link to proceed to contract signing
+        var contractUrl = '/contract?' + params.toString();
+        success.innerHTML = '<div style="font-size:3rem;margin-bottom:16px;"><svg width="48" height="48" fill="none" stroke="var(--seafoam)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>' +
+          '<h3 style="font-family:Cormorant Garamond,serif;font-size:1.4rem;font-weight:700;margin-bottom:12px;color:var(--gold);">Booking Request Received!</h3>' +
+          '<p style="color:var(--gray-400);line-height:1.7;margin-bottom:28px;">Our team will contact you within 24 hours to confirm your charter details and total price.</p>' +
+          '<p style="font-size:0.8rem;color:var(--gray-400);margin-bottom:16px;font-weight:600;letter-spacing:0.04em;">How would you like to proceed?</p>' +
+          '<div style="display:flex;flex-direction:column;gap:12px;max-width:440px;margin:0 auto;">' +
+            '<a href="' + contractUrl + '" class="btn btn-gold" style="justify-content:center;padding:16px 32px;font-size:0.85rem;width:100%;">Sign Contracts & Pay Deposit Now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>' +
+            '<a href="/" class="btn btn-outline" style="justify-content:center;padding:14px 32px;font-size:0.85rem;width:100%;border:1px solid rgba(78,205,196,0.25);color:#4ecdc4;">I\'ll Complete This Later</a>' +
+          '</div>' +
+          '<p style="color:var(--gray-600);font-size:0.72rem;margin-top:20px;line-height:1.6;">Choose <strong style="color:var(--gray-400);">Sign Now</strong> to lock in your booking immediately, or <strong style="color:var(--gray-400);">Later</strong> and we\'ll send you the contract link by email.</p>';
       } else {
         alert('Something went wrong. Please call (727) 609-2248 directly.');
       }
@@ -522,6 +569,9 @@ function sendChat() {
           '<div style="margin-top:10px;font-size:0.75rem;color:#4ecdc4;">Sending to our concierge team...</div>';
         messages.appendChild(bookingCard);
         messages.scrollTop = messages.scrollHeight;
+
+        // Add to Google Calendar
+        addToGoogleCalendar(booking);
 
         // Submit booking email via Web3Forms (client-side)
         var emailBody = 'NEW BOOKING REQUEST — AI Chat Concierge\n========================================\n\n' +
