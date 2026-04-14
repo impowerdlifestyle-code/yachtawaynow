@@ -1,4 +1,10 @@
 {
+  "crons": [
+    {
+      "path": "/api/review-responder",
+      "schedule": "0 */1 * * *"
+    }
+  ],
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
